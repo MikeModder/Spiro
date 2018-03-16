@@ -7,7 +7,7 @@ exports.run = async (client, msg) => {
         client.commands.forEach(c => {
             embed.addField(c.conf.name, c.conf.desc);
         });
-        return msg.channel.send(embed);
+        return msg.author.send(embed).then(() => { msg.react('✅'); }).catch(e => { msg.channel.send(`***${msg.author.tag}***, I couldn't send you a DM with the commands!`); });
     }
 
     if(!client.commands.has(command)) return msg.channel.send(`:x: That isn't a valid command!`);

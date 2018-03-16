@@ -9,6 +9,6 @@
     "async": "^2.6.0",
     "discord.js": "^11.3.0",
     "enmap": "^0.4.6",
-    "mongoose": "^5.0.7"
+    "mongoose": "^5.0.10"
   }
 }
