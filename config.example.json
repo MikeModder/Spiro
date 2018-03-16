@@ -1,0 +1,7 @@
+{
+    "token": "token",
+    "owners": ["owner"],
+    "categories": ["bot"],
+    "prefix": "sp!",
+    "db": "mongodb://localhost/spiro"
+}
