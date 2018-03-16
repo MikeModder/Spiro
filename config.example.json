@@ -1,7 +1,7 @@
 {
     "token": "token",
     "owners": ["owner"],
-    "categories": ["bot"],
+    "categories": ["bot", "fun", "image"],
     "prefix": "sp!",
     "db": "mongodb://localhost/spiro",
     "invite": "invite url (leave empty if none)",
