@@ -1,0 +1,14 @@
+{
+  "name": "UnamedJSBot",
+  "version": "1.0.0",
+  "description": "A bot that doesn't yet have a name",
+  "main": "bot.js",
+  "author": "MikeModder",
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "async": "^2.6.0",
+    "discord.js": "^11.3.0",
+    "enmap": "^0.4.6",
+    "mongoose": "^5.0.7"
+  }
+}
