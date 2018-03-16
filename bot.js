@@ -11,7 +11,7 @@ client.version = `0-Beta`;
 client.dbReady = false;
 
 client.updateGame = () => {
-    client.user.setActivity(`over you. | Say ${client.config.prefix}help for help! | Spiro v${client.version}`, { url: 'https://github.com/MikeModder/Spiro', type: 'WATCHING' });
+    client.user.setActivity(`the game of life. | Say ${client.config.prefix}help for help! | Spiro v${client.version}`);
 };
 
 let categories = client.config.categories;

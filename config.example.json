@@ -3,5 +3,14 @@
     "owners": ["owner"],
     "categories": ["bot"],
     "prefix": "sp!",
-    "db": "mongodb://localhost/spiro"
+    "db": "mongodb://localhost/spiro",
+    "invite": "invite url (leave empty if none)",
+    "emojis": {
+        "error": "❌",
+        "success": "✅",
+        "coin": {
+            "heads": "<:coin_heads:424238927940157450>",
+            "tails": "<:coin_tails:424239235810459650>"
+        }
+    }
 }
