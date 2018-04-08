@@ -23,7 +23,7 @@ exports.run = async (client, msg) => {
             finished = true;
         }
         msgs.forEach(m => {
-            log.write(`[${moment(m.createdAt).format('lll')}][${m.author.username}#${m.author.discriminator}]${m.author.bot ? '[BOT]' : ''}: ${m.content}\n`);
+            log.write(`[${moment(m.createdAt).format('lll')}][${m.author.username}#${m.author.discriminator}]${m.author.bot ? '[BOT]' : ''}: ${m.cleanContent}\n`);
             offset = m.id;
             dumpCount++;
         });
