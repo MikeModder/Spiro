@@ -14,7 +14,10 @@ exports.run = async (client, msg) => {
     if(debug) msg.channel.send(`Warning: Debug mode was enabled so status messages will be sent.`);
     while(!finished){
         if(debug) msg.channel.send(`Offset: ${offset}, Count: ${dumpCount}`);
-        let msgs = await msg.channel.fetchMessages({ limit: 100, before: offset });
+        let msgs = await msg.channel.fetchMessages({ limit: 100, before: offset })
+            .catch(e => {
+                return msg.channel.send(`${client.config.emojis.error} There was an error dumping messages!\n${e}`);
+            });
         if(msgs.size < 100) {
             //if there's less than 100 messages we should be done
             finished = true;
@@ -26,24 +29,11 @@ exports.run = async (client, msg) => {
         });
     }
     let attachment = new Attachment(log.toBuffer(), `${msg.channel.name}-dump.txt`);
-    msg.channel.send(`Here's your dump!`, attachment);
-    /*msg.channel.fetchMessages({ limit: 100 })
-        .then(messages => {
-            msg.channel.send(`Okay, I got ${messages.size} messages!`);
-            //console.dir(messages)
-            messages.forEach(m => {
-                log.write(`[${moment(m.createdAt).format('lll')}][${m.author.username}#${m.author.discriminator}]${m.author.bot ? '[BOT]' : ''}: ${m.content}\n`);
-                offset = m.id;
-            });
-
-        })
-        .then(() => {
-            let attachment = new Attachment(log.toBuffer(), `${msg.channel.name}-dump.txt`);
-            msg.channel.send(`Here's your dump!`, attachment);
-        })
+    msg.channel.send(`Here's your dump!`, attachment)
         .catch(e => {
             msg.channel.send(`${client.config.emojis.error} There was an error dumping messages!\n${e}`);
-        });*/
+        });
+    log.end();
 };
 
 exports.conf = {
